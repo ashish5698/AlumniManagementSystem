@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Uri mCapturedImageURI = null;
     private ValueCallback<Uri[]> mFilePathCallback;
     private String mCameraPhotoPath;
-    String url = "http://10.0.2.2:8000/";
+    String url = "http://ec2-54-163-173-21.compute-1.amazonaws.com:8000/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = mywebview.getSettings();
         webSettings.setJavaScriptEnabled(true);
         mywebview.getSettings().setAllowFileAccess(true);
-        mywebview.setScrollbarFadingEnabled(false);
+        mywebview.setScrollbarFadingEnabled(true);
         mywebview.setWebViewClient(new WebViewClient(){
             @Override
             public void onPageFinished(WebView view, String url) {
